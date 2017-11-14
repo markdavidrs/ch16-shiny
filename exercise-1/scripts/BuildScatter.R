@@ -6,5 +6,17 @@
 #   - Variable for the y axis
 #   - Variable for the color
 #   - Title of the plot (set a default of "Title")
+
 #   - Label for the x axis (set a default of "X Title")
 #   - Label for the y axis (set a default of "Y Title")
+
+
+scatterplot <- function (data, xaxis, yaxis, color, title = 'title', xlab = 'xtitle', ylab = 'ytitle')  {
+  p <- ggplot(data = data) + 
+    geom_point(mapping = aes(x = data[,xaxis], y=data[,yaxis], color = data[,color])) + 
+    labs(title = title, x = xLab, y = yLab)
+  
+  # Return plot
+  return(p)
+  
+}
